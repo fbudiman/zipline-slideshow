@@ -22,6 +22,7 @@ class Slideshow extends Component {
     }), this.setCurrentImg);
   };
 
+  // index should loop around once it reaches both ends (start/finish)
   setCurrentIdx = (forward) => {
     this.setState((prevState) => ({
       currentIdx: forward ? 
@@ -31,6 +32,7 @@ class Slideshow extends Component {
     }), this.setCurrentImg)
   };
 
+  // update images state also to keep track of each image's views
   setCurrentImg = () => {
     const { images: imgs, currentIdx } = this.state;
     const current = {
@@ -47,6 +49,7 @@ class Slideshow extends Component {
     }));
   }
 
+  // allows for use of keyboard to shuffle through images (L/R only)
   handleKeyDown = (e) => {    
     if (e.keyCode === 37) {
       this.setCurrentIdx(false);
@@ -55,6 +58,7 @@ class Slideshow extends Component {
     }
   }
 
+  // toggles on/off the display for number of views
   handleToggleViews = () => {
     this.setState((prevState) => ({
       displayViews: !prevState.displayViews
