@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import images from './images.json';
 import './Slideshow.css';
+import { ReactComponent as LeftArrow } from './icons/left-arrow.svg';
+import { ReactComponent as RightArrow } from './icons/right-arrow.svg';
 
 const initialState = {
   images: [],
@@ -45,18 +47,22 @@ class Slideshow extends Component {
   }
 
   render() {
-    const { current, loading, images: imgs } = this.state;
+    const { current, loading } = this.state;
 
     return (
       <div className="Slideshow">
-        <div className="Slideshow__left" onClick={() => this.setCurrentIdx(false)}></div>
+        <div className="Slideshow__left" onClick={() => this.setCurrentIdx(false)}>
+          <LeftArrow />
+        </div>
         <div className="Slideshow__image">
           {loading ?
             <div className="empty-image"></div> :
             <img src={require(`./images/${current.url}`)} alt={current.title} />
           }
         </div>
-        <div className="Slideshow__left" onClick={() => this.setCurrentIdx(true)}></div>
+        <div className="Slideshow__left" onClick={() => this.setCurrentIdx(true)}>
+          <RightArrow />
+        </div>
       </div>
     );
   }

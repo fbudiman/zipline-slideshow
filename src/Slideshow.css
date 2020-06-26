@@ -7,14 +7,23 @@
 
 .Slideshow__left,
 .Slideshow__right {
-  flex: 1;
-  background: grey;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
+  padding: 0.4rem;
+}
+
+.Slideshow svg {
+  width: 2.25rem;
 }
 
 .Slideshow__image {
-  flex: 5;
+  flex: 1;
   display: flex;
+  padding: 0.75rem;
+  margin: 0 0.75rem;
+  background-color: #EAEAEA;
+  border-radius: 15px;
 }
 
 .Slideshow__image img,
@@ -23,4 +32,9 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
