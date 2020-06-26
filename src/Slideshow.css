@@ -3,10 +3,21 @@
   justify-content: center;
   height: calc(100vh - 2rem);
   padding: 1rem;
+  position: relative;
 }
 
 .Slideshow:focus {
   outline:0;
+}
+
+.Slideshow__views {
+  position: absolute;
+  padding: 1rem 2rem;
+  text-align: center;
+  color: white;
+  top: calc(50vh - 2rem);
+  border-radius: 15px;
+  background-color: rgba(30, 30, 30, 0.5);
 }
 
 .Slideshow__left,

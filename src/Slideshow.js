@@ -8,7 +8,8 @@ const initialState = {
   images: [],
   loading: true,
   currentIdx: 0,
-  current: {}
+  current: {},
+  displayViews: false
 }
 
 class Slideshow extends Component {
@@ -54,20 +55,27 @@ class Slideshow extends Component {
     }
   }
 
+  handleToggleViews = () => {
+    this.setState((prevState) => ({
+      displayViews: !prevState.displayViews
+    }));
+  }
+
   render() {
-    const { current, loading } = this.state;
+    const { current, loading, displayViews } = this.state;
 
     return (
       <div className="Slideshow" tabIndex="1" onKeyDown={this.handleKeyDown}>
         <div className="Slideshow__left" onClick={() => this.setCurrentIdx(false)}>
           <LeftArrow />
         </div>
-        <div className="Slideshow__image">
+        <div className="Slideshow__image" onClick={this.handleToggleViews}>
           {loading ?
             <div className="empty-image"></div> :
             <img src={require(`./images/${current.url}`)} alt={current.title} />
           }
         </div>
+        {displayViews && <div className="Slideshow__views">{current.views}</div>}
         <div className="Slideshow__left" onClick={() => this.setCurrentIdx(true)}>
           <RightArrow />
         </div>
