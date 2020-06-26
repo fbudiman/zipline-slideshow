@@ -63,3 +63,27 @@
   -webkit-user-select: none;
   user-select: none;
 }
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .Slideshow {
+      padding: 0.5rem;
+      height: calc(100vh - 1rem);
+    }
+
+    .Slideshow svg {
+      width: 1.25rem;
+    }
+
+    .Slideshow__left,
+    .Slideshow__right {
+      padding: 0;
+    }
+
+    .Slideshow__views {
+      padding: 0.5rem 1rem;
+      top: calc(50vh - 1rem);
+    }
+}

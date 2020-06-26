@@ -90,7 +90,7 @@ class Slideshow extends Component {
           }
         </div>
         {displayViews && <div className="Slideshow__views">{current.views}</div>}
-        <div className="Slideshow__left" onClick={() => this.setCurrentIdx(true)}>
+        <div className="Slideshow__right" onClick={() => this.setCurrentIdx(true)}>
           <RightArrow />
         </div>
       </div>
