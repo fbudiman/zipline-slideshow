@@ -5,6 +5,10 @@
   padding: 1rem;
 }
 
+.Slideshow:focus {
+  outline:0;
+}
+
 .Slideshow__left,
 .Slideshow__right {
   display: flex;

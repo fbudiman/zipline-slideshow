@@ -46,11 +46,19 @@ class Slideshow extends Component {
     }));
   }
 
+  handleKeyDown = (e) => {    
+    if (e.keyCode === 37) {
+      this.setCurrentIdx(false);
+    } else if (e.keyCode === 39) {
+      this.setCurrentIdx(true);
+    }
+  }
+
   render() {
     const { current, loading } = this.state;
 
     return (
-      <div className="Slideshow">
+      <div className="Slideshow" tabIndex="1" onKeyDown={this.handleKeyDown}>
         <div className="Slideshow__left" onClick={() => this.setCurrentIdx(false)}>
           <LeftArrow />
         </div>
