@@ -1,6 +1,10 @@
+// react
 import React, { Component } from 'react'
+// images
 import images from './images.json';
+// css
 import './Slideshow.css';
+// svg icons
 import { ReactComponent as LeftArrow } from './icons/left-arrow.svg';
 import { ReactComponent as RightArrow } from './icons/right-arrow.svg';
 
