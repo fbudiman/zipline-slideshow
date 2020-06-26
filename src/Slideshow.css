@@ -16,7 +16,7 @@
   text-align: center;
   color: white;
   top: calc(50vh - 2rem);
-  border-radius: 15px;
+  border-radius: 3px;
   background-color: rgba(30, 30, 30, 0.5);
 }
 
@@ -28,8 +28,18 @@
   padding: 0.4rem;
 }
 
+.Slideshow__left:hover svg path,
+.Slideshow__right:hover svg path {
+  fill: #EAEAEA;
+}
+
 .Slideshow svg {
   width: 2.25rem;
+}
+
+.Slideshow svg path {
+  fill: #5E5E5E;
+  transition: fill 0.4s ease;
 }
 
 .Slideshow__image {
@@ -38,7 +48,7 @@
   padding: 0.75rem;
   margin: 0 0.75rem;
   background-color: #EAEAEA;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .Slideshow__image img,

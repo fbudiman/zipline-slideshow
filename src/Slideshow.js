@@ -36,7 +36,7 @@ class Slideshow extends Component {
     }), this.setCurrentImg)
   };
 
-  // update images state also to keep track of each image's views
+  // images' state also needs to be updated to keep track of each image's views
   setCurrentImg = () => {
     const { images: imgs, currentIdx } = this.state;
     const current = {
