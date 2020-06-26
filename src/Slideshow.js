@@ -21,6 +21,7 @@ class Slideshow extends Component {
   state = {...initialState};
 
   componentDidMount() {
+    this.container.focus();
     this.setState(() => ({
       images: images.files
     }), this.setCurrentImg);
@@ -73,7 +74,12 @@ class Slideshow extends Component {
     const { current, loading, displayViews } = this.state;
 
     return (
-      <div className="Slideshow" tabIndex="1" onKeyDown={this.handleKeyDown}>
+      <div 
+        className="Slideshow" 
+        tabIndex="1" 
+        onKeyDown={this.handleKeyDown} 
+        ref={div => this.container = div}
+      >
         <div className="Slideshow__left" onClick={() => this.setCurrentIdx(false)}>
           <LeftArrow />
         </div>
